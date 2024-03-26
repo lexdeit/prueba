@@ -2,12 +2,11 @@ import { Input } from "@nextui-org/input"
 import { SearchIcon } from "@/icons/search-icon"
 
 
-export const SearchBar = ({ searchByClient }) => {
+export const SearchBar = ({ initialValueKey, searchByClient }) => {
 
     return (
         <Input
             startContent={<SearchIcon />}
-            className="border border-neutral-100 rounded-full shadow-md shadow-neutral-100"
             placeholder='Buscar...'
             classNames={{
                 input: [
