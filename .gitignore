@@ -1,0 +1,25 @@
+# Dependencias
+/node_modules
+
+# Directorio de construcción
+/build
+
+# Archivos de registro
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs y editores
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de configuración
+.env
+
+# Archivos generados en el entorno de desarrollo
+.DS_Store
+Thumbs.db
+# Next.js
+.next

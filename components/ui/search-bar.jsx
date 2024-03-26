@@ -1,51 +1,8 @@
-import { useRouter, useSearchParams } from "next/navigation"
-import { useState } from "react"
 import { Input } from "@nextui-org/input"
-import qs from "query-string"
 import { SearchIcon } from "@/icons/search-icon"
 
 
-export const SearchBar = ({ initialValueKey, searchByClient }) => {
-
-    const searchParams = useSearchParams()
-    const router = useRouter()
-    const [search, setSearch] = useState({
-        query: '',
-        data: []
-    });
-
-    const valueKey = initialValueKey ? initialValueKey : 'bankName'
-
-    const handleOnChangeSearch = e => {
-
-        const value = e.target.value;
-        const property = e.target.name;
-
-        setSearch({ ...search, [property]: value });
-
-        const current = qs.parse(searchParams.toString())
-
-        const query = {
-            ...current,
-            page: 1,
-            [valueKey]: value
-        }
-
-        if (current[valueKey] === value) {
-            query[valueKey] = null
-        }
-
-        const url = qs.stringifyUrl(
-            {
-                url: window.location.href,
-                query
-            },
-            { skipNull: true }
-        )
-
-        router.push(url)
-    }
-
+export const SearchBar = ({ searchByClient }) => {
 
     return (
         <Input
